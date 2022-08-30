@@ -1,0 +1,14 @@
+local afk = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   afk:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   afk:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Notification"; 
+    Text = "Activated AFK Script"; 
+    Icon = "https://tr.rbxcdn.com/cbd702878c7da1c91a4783878947a4bb/420/420/Decal/Png"; 
+    Duration = 5;
+    Callback = bindableFunction;
+})
